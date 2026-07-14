@@ -1,65 +1,43 @@
 # Copilot Instructions
 
-## Purpose
+## Operating Contract
 
-このリポジトリは、PoC / プロトタイプ段階の AI エージェントまたは生成 AI 機能を扱います。  
-完成度よりも「仮説検証」「学習」「素早い反復」を重視します。
+- Start from the approved feature specification and cite the relevant
+  `REQ-###` and `AC-###` identifiers before changing code.
+- Read [scope](../docs/02_scope.md) and the nearest architecture or decision
+  record before proposing a structural change.
+- Do not implement unresolved behavior, expand scope, or silently rewrite a
+  requirement. Surface the gap and request human approval.
+- Make the smallest change that can satisfy the approved acceptance criteria.
+- After the first substantive edit, run the narrowest executable check that can
+  disprove the change before editing further.
+- Report verification as reproducible evidence: command, test name, result, and
+  any unverified risk. Never claim completion from inspection alone when an
+  executable check exists.
+- Preserve traceability from specification to plan, changed files, tests, and
+  verification report. Follow the repository's identifier rules.
+- Record a material trade-off in [decisions](../docs/05_decisions.md) and a
+  hypothesis-driven trial in [experiments](../docs/04_experiments.md).
+- Keep implementation simple and replaceable. This repository favors learning
+  and fast iteration over speculative production optimization.
+- Create application source code under `/src`. Keep tests under `/tests`,
+  harness utilities under `/scripts`, and documentation under `/docs`; do not
+  place application source code at the repository root or in these support
+  directories.
+- Use English identifiers in code. Japanese or English may be used in
+  documentation, but keep terminology consistent within each artifact.
 
-## Project Context
+## Human Approval Gates
 
-* 本プロジェクトは本番システムではありません
-* 要件・設計は変更される前提です
-* 完璧さよりも「試すこと」を優先します
+Human approval is required before moving from specification to planning and
+from planning to implementation. Agent handoffs suggest the next step but must
+not auto-submit it.
 
-## What to Optimize For
+## References
 
-Copilot は以下を優先してください：
-
-* シンプルさ
-* 可読性
-* 仮説検証のしやすさ
-* 変更しやすい構造
-
-## What NOT to Do
-
-Copilot は以下を行わないでください：
-
-* 不要に複雑な設計を導入すること
-* 本番運用を前提とした過剰な最適化
-* 明示されていない機能やスコープ外の実装
-
-## Scope Awareness
-
-* 詳細なスコープは docs/02\_scope.md を参照してください
-* スコープ外の作業が必要な場合は、実装せずコメントで指摘してください
-
-## Architecture Awareness
-
-* 高レベル構成は docs/03\_architecture.md に記載されています
-* 大きな構造変更を伴う提案をする場合は、その理由を説明してください
-
-## Experiment-Driven Development
-
-このプロジェクトでは実験ログを重視します。
-
-* 新しいアプローチを試す場合は docs/04\_experiments.md に追記することを前提にしてください
-* 「なぜその変更を行うのか」をコメントで明確にしてください
-
-## Decision Making
-
-重要な判断やトレードオフがある場合：
-
-* すぐに決め打ちせず、選択肢を提示してください
-* 最終判断は人間が行います
-* 判断理由は docs/05\_decisions.md に残される想定です
-
-## Communication Style
-
-* 出力は簡潔に
-* 推測や仮定は明示的に記載
-* 不確実な点は「不確実」と明言してください
-
-## Language
-
-* コメントや説明は日本語で問題ありません
-* コードは一般的な英語命名を使用してください
+- [Vision](../docs/01_vision.md)
+- [Scope](../docs/02_scope.md)
+- [Architecture](../docs/03_architecture.md)
+- [Feature specification template](../docs/specs/feature-spec.template.md)
+- [Implementation plan template](../docs/plans/implementation-plan.template.md)
+- [Verification template](../docs/quality/verification.template.md)
