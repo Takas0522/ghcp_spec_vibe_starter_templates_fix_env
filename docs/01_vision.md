@@ -1,28 +1,45 @@
-# Product / PoC Vision
+# Product Vision
 
 ## Problem
 
-現在、ユーザーや開発者が直面している具体的な課題は何か。
+誰が、どの状況で、どの問題に直面しているかを観察可能な事実として
+記載します。解決策や技術名はここでは固定しません。
 
-## Target User
+- Current behavior: `<現在の行動または結果>`
+- Evidence: `<問い合わせ、計測値、観察記録へのリンク>`
+- Cost of inaction: `<時間、品質、リスク、機会損失>`
 
-この PoC を主に利用するユーザーは誰か。
-（例：保守運用担当者、開発者、業務部門ユーザーなど）
+## Target Users
 
-## Hypothesis
+| User | Context | Primary need |
+| --- | --- | --- |
+| `<ユーザー種別>` | `<利用状況>` | `<達成したいこと>` |
 
-もし <AIの機能・能力> を提供できれば、  
-<ユーザー> は <望ましい結果> を得られるのではないか。
+## Hypotheses
 
-## Expected Value
+`HYP-001`: もし `<能力または変更>` を提供すれば、`<対象ユーザー>` は
+`<観察可能な成果>` を得られる。なぜなら `<根拠>` だからである。
 
-- 成功した場合に得られそうな価値
-- 定性的な表現で問題ありません
+## Outcomes
 
-## Success Criteria (Qualitative)
+| Outcome | Baseline | Target | Measurement window |
+| --- | --- | --- | --- |
+| `<成果指標>` | `<現在値>` | `<目標値>` | `<期間>` |
 
-例：
+成果指標をまだ測定できない場合は `[NEEDS CLARIFICATION]` とし、代理指標を
+決めるための実験を [Experiment Log](04_experiments.md) に登録します。
 
-- 「使える」と評価される
-- 調査・作業時間が明らかに短縮される
-- 出力結果を業務判断に使えると感じられる
+## Principles
+
+- `<判断時に優先する価値>`
+- `<意図的に最適化しない事項>`
+
+## Open Questions
+
+- [ ] `<仮説やスコープを変え得る未解決事項>`
+
+## Approval
+
+- Status: `Draft | Approved | Superseded`
+- Owner: `<意思決定者>`
+- Reviewed on: `YYYY-MM-DD`

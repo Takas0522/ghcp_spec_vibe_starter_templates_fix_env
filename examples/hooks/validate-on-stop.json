@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "python scripts/validate_starter.py",
+        "windows": "py -3 scripts\\validate_starter.py",
+        "timeout": 30
+      }
+    ]
+  }
+}
