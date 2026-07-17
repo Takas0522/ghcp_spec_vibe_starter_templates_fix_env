@@ -29,12 +29,33 @@
 
 ## Technology Constraints
 
-- Implement UI as vanilla HTML, CSS, and JavaScript only. Do not introduce
-  build tools, bundlers, transpilers, or front-end frameworks.
-- All runtime data is stored in-memory (JavaScript variables or the DOM).
-  Data does not need to persist across page reloads; treat every reload as a
-  clean slate.
-- Do not add a back-end server, database, or external storage layer unless
+### Back End
+
+- Implement the API server with **Python / FastAPI** only. Do not introduce
+  alternative frameworks (Django, Flask, etc.) without an approved ADR.
+- Use **SQLite** as the sole persistent store via the standard `sqlite3` module
+  or `SQLAlchemy` with a SQLite URL. Do not introduce other database engines
+  unless explicitly approved in a feature specification.
+- Protect every non-public endpoint with **JWT bearer tokens** (HS256 or RS256).
+  Issue tokens from a dedicated `/auth/token` endpoint. Validate signatures and
+  expiry on every protected route using `python-jose` or `PyJWT`. Never embed
+  secrets in source code; read them from environment variables.
+- Store passwords with `passlib` (bcrypt). Never store or log plaintext
+  credentials.
+- Place the FastAPI application under `/src`. Define DB schema migrations as
+  plain SQL scripts under `/src/migrations` or use `Alembic`.
+
+### Front End
+
+- Implement UI as vanilla HTML, CSS (Tailwind via CDN), and JavaScript only.
+  Do not introduce build tools, bundlers, transpilers, or front-end frameworks.
+- Communicate with the back end exclusively through the FastAPI REST endpoints.
+  Store the JWT access token in `sessionStorage` (not `localStorage` or cookies)
+  to limit XSS exposure. Clear it on logout.
+
+### General
+
+- Do not add external services, cloud storage, or message brokers unless
   explicitly approved in a feature specification.
 
 ## Human Approval Gates
