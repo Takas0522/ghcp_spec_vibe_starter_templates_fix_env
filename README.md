@@ -22,8 +22,10 @@ flowchart LR
 ## Quick Start
 
 1. [Vision](docs/01_vision.md) と [Scope](docs/02_scope.md) を更新します。
+   - 01_vision.mdなどの既存ファイル をテンプレートとしてGitHub Copilotと協業して仕様を作成することをお勧めします。
 2. [Feature spec template](docs/specs/feature-spec.template.md) をコピーし、
    `docs/specs/<feature-name>.md` として要求と受入条件を定義します。
+   - ①と同じく、既存のテンプレートを使い、GitHub Copilotと協業して仕様を作成することをお勧めします。
 3. VS Code Chat で `Spec` agent または `/define-feature` を使い、仕様を
    Ready にします。
 4. `Plan` agent で実装計画を作成し、人間が承認します。

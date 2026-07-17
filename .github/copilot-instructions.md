@@ -27,6 +27,16 @@
 - Use English identifiers in code. Japanese or English may be used in
   documentation, but keep terminology consistent within each artifact.
 
+## Technology Constraints
+
+- Implement UI as vanilla HTML, CSS, and JavaScript only. Do not introduce
+  build tools, bundlers, transpilers, or front-end frameworks.
+- All runtime data is stored in-memory (JavaScript variables or the DOM).
+  Data does not need to persist across page reloads; treat every reload as a
+  clean slate.
+- Do not add a back-end server, database, or external storage layer unless
+  explicitly approved in a feature specification.
+
 ## Human Approval Gates
 
 Human approval is required before moving from specification to planning and
